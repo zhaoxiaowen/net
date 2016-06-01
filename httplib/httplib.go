@@ -183,6 +183,10 @@ func (b *BeegoHttpRequest) Header(key, value string) *BeegoHttpRequest {
 	b.req.Header.Set(key, value)
 	return b
 }
+func (b *BeegoHttpRequest) AddHeader(key, value string) *BeegoHttpRequest {
+	b.req.Header.Add(key, value)
+	return b
+}
 
 // Set the protocol version for incoming requests.
 // Client requests always use HTTP/1.1.
