@@ -183,8 +183,9 @@ func (b *BeegoHttpRequest) Header(key, value string) *BeegoHttpRequest {
 	b.req.Header.Set(key, value)
 	return b
 }
-func (b *BeegoHttpRequest) AddHeader(key, value string) *BeegoHttpRequest {
-	b.req.Header.Add(key, value)
+func (b *BeegoHttpRequest) AddHeaderHost(value string) *BeegoHttpRequest {
+	b.req.Host = value
+	b.req.Header.Add("Host", value)
 	return b
 }
 
